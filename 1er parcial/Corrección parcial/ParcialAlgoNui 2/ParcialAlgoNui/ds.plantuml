@@ -1,0 +1,27 @@
+@startuml
+title Servir dos k de fruta light 
+
+":TestCase" -> ":AlgoNui": prepararFrutalLightKg(2)
+create "helado: Helado"
+":AlgoNui" -> "helado: Helado": frutal
+"helado: Helado" -> "helado: Helado": initialize()
+
+create "tipo: Frutal"
+"helado: Helado" -> "tipo: Frutal": new
+
+":AlgoNui" -> "helado: Helado": kilos(2)
+":AlgoNui" -> "helado: Helado": light(true)
+
+create "consistencia: Light"
+"helado: Helado" -> "consistencia: Light": new
+return
+
+":TestCase" -> "helado: Helado": caloria()
+"helado: Helado" -> "tipo: Frutal": incrementar(cal, 2)
+"helado: Helado" -> "consistencia: Light": alterar(cal)
+return 600
+"helado: Helado" --> ":TestCase": [600]
+
+
+
+@enduml

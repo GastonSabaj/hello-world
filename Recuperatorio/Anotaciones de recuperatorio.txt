@@ -1,0 +1,68 @@
+Observaciones:
+
+-Si mi celu tiene funcion holográfica, y el celu que me esta llamando también tiene funcion holográfica, entonces se puede concretar la comunicación.
+
+-Primero pregunto por si yo puedo establecer la conexion consultando mis atributos, y después le quiero pedir al otro celular que chequee si puede establecer la conexión consultando sus propios atributos en vez de consultarlos yo.
+
+-Holográfica, chat y video son CARACTERÍSTICAS de TIPOS de llamadas
+
+-Si quiero armar un tipo de llamada, quiero podes mixear cualquiera de esas 3.
+
+-Inevitablemente tengo que chequear si el otro celu cumple las funciones como para establecer la llamada.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Problemas de diseño de recuperatorio AlgoCel:
+
+1)Violación de encapsulamiento de la información con getters: 
+       1) tieneChat
+       2) tieneVideo
+       3) tieneFuncionHolograma
+       
+2) No utilización de polimorfismo, ya que hay como 5 métodos que simulan el uso de distintos if's, tipo:
+
+  [tieneChat & (unCeluPoo tieneChat ) ] ifTrue: [ //LÓGICA DIFERENTE ] 
+  [(tieneVideo & tieneChat ) & (unCeluPoo tieneChat & unCeluPoo tieneVideo )] ifTrue: [ //LOGICA DIFERENTE ]
+  (tieneVideo) ifTrue: [ //LOGICA DIFERENTE]
+  (tieneFuncionHolograma & tieneChat ) ifTrue: [ //LÓGICA DIFERENTE ]
+  (tieneFuncionHolograma & unCeluPoo tieneFuncionHolograma ) ifTrue: [ //LÓGICA DIFERENTE ]
+  
+  //Lógica diferente = Strings
+  
+  
+3)Uso erróneo de la interfaz de usuario AlgoCel, ya que este solamente debe delegar y no tener lógica desarrollada 
+propia.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Propuestas:
+
+-El celular tenga un método para chequear su estado y devolver si puede establecerse la conexión. 
+
+-Tal vez tengo que mixear un string 
+ 
+#########################################################################################################
+ #########################################################################################################
+  #########################################################################################################
+   #########################################################################################################
+    #########################################################################################################
+     #########################################################################################################
+      ####################################|| SOLUCION ||#######################################################
+     #########################################################################################################
+    #########################################################################################################
+   #########################################################################################################
+  #########################################################################################################  #########################################################################################################
+  
+1) Inicializar al celular con todas las funciones instanciadas 
+2)  
+  
+  
+  
+  
+  
+  
+  
+  

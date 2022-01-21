@@ -1,0 +1,15 @@
+-Helado es anémica, no tiene lógica propia
+-Inicialización inconsistente de helado
+-Violación de encapsulamiento de los atributos (culpa de los getters)
+-No utilización de polimorfismo en el cálculo de calorías
+
+
+Supuestos:
+-El helado puede ser cremoso o frutal.
+-Características secundarias del helado puede ser light o con promoFraPoo.
+
+Problemas de mi modelo:
+-Repito código en el cálculo de calorías, por el cual no se justifica bien el hecho de haber creado dos clases distintas con la misma lógica.
+
+
+¿Que lógica particular tiene el helado frutal o cremoso?

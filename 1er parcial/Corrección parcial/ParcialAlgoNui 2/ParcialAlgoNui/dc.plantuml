@@ -1,0 +1,45 @@
+@startuml
+
+class Helado {
+        + caloria()
+}
+
+interface Tipo {
+        + incrementar(cal,  kilos)
+}
+
+class SinTipo {
+        + incrementar(cal,  kilos)
+}
+
+class Frutal {
+        + incrementar(cal,  kilos)
+}
+
+class Cremoso {
+        + incrementar(cal,  kilos)
+}
+
+interface Consistenia {
+        + alterar(cal)
+}
+
+class Light {
+        + alterar(cal)
+}
+
+class NoLight {
+        + alterar(cal)
+}
+
+Helado *- "1" Tipo
+Consistenia "1" -* Helado
+
+Tipo <|.. SinTipo
+Tipo <|.. Frutal
+Tipo <|.. Cremoso
+
+Consistenia <|.. Light
+Consistenia <|.. NoLight
+
+@enduml
